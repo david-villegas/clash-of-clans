@@ -1,0 +1,147 @@
+// Place all the styles related to the mainpage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/////////////////////////////// estilo.css ////////////////////////////////////
+.calculadora{
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  background-color:#e0e0e0;
+  border-radius: 25px;
+  width: 960px;
+  height: auto;
+  }
+
+.calculadora img{
+  height: 50px;
+  width: 50px;
+}
+
+.aguila{
+  width: 80px !important;
+  height: 80px !important;
+}
+
+#resultado{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 80px;
+    line-height: 75px;
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 50%;
+}
+
+.pos_absolute{
+
+/*position:absolute;*/
+width: 105px;
+
+}
+
+.pos_relative{
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
+.log-in{
+  background-image: image-url('log-in.png');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3 !important;
+  position: absolute;
+}
+
+#navbar li:hover{
+  background-color: rgba(0,0,0,.2);
+}
+
+.navbar li a{
+  padding: 0.5rem 1rem !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+.navbar-blog li a{
+  font-size: 11px !important;
+
+}
+
+.form-control{
+  background-color: transparent !important;
+  font-size: 1.2rem !important;
+}
+
+.progress .progress-bar{
+    border: none;
+    box-shadow: none;
+    -webkit-animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 2s;
+    animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 2s;
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
+}
+
+///////////////////////////// end estilo.css //////////////////////////////////
+
+                        ////////////////////////////////////////////////////////////////
+                        // Clases para Formularios de Inicio de Sesión, Registro, etc //
+                        ////////////////////////////////////////////////////////////////
+.register{
+  font-size: 12px;
+}
+.form-pos{
+  position: relative;
+}
+
+@font-face {
+  font-family: clashofclans;
+  src: url(Supercell-magic-webfont.ttf);
+}
+
+.form-title{
+  font-family: clashofclans;
+}
+
+.form-font{
+  font-family: clashofclans;
+  font-size: 10px;
+}
+
+.form-bar{
+  font-family: clashofclans;
+}
+
+.btn_home{
+  width: 60px;
+  position: fixed;
+  z-index: 1;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 50%;
+  color: #575757;
+  box-shadow: 0px 0px 40px -5px;
+  cursor: pointer;
+}
+
+// Fin de estilos para Formularios //
+
+                                //////////////////////////////////////
+                                // Estilos para la página de Reglas //
+                                //////////////////////////////////////
+.padding-home{
+  padding-top: 90px;
+}
+
+// Fin de estilos para Reglas //
+
+                                ///////////////////////////////////////////
+                                // Estilos para la página de Formaciones //
+                                ///////////////////////////////////////////
+

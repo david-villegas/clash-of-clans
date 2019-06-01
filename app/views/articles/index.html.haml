@@ -1,0 +1,71 @@
+/ Page Content
+.container
+  .row
+    / Blog Entries Column
+    .col-md-8
+      %h1.my-4.form-title.text-center#blog_title
+        Supremacy Blog
+        -# %small Secondary Text
+      / Blog Post
+      - @articles.each do |article|
+        .card.mb-4
+          -# %img.card-img-top{:alt => "Card image cap", :src => "http://placehold.it/750x300"}/
+          %h3.card-title.card-header.form-title=article.title
+          .card-body
+            %p.card-text=simple_format("#{article.description.first(350)} ...") #"raw" tambien sirve
+            %a.btn.btn-outline-primary.btn-sm{:href => article_path(article.id)} Seguir Leyendo →
+          .card-footer.text-muted.text-right
+            Posted on:
+            =article.created_at.strftime('%d-%m-%Y')
+            by
+            %span{class:"font-weight-bold font-italic"}
+              =article.user.name
+      / Pagination
+      .mt-3= will_paginate @articles
+    / Sidebar Widgets Column
+    .col-md-4
+      / Search Widget
+      .card.my-4
+        %h5.card-header.form-title Buscador de Posts
+        .card-body
+          = form_tag(search_articles_path, method: 'get') do
+            .input-group
+              = search_field_tag :search, params[:search], placeholder: "Buscar por Título...", class: "form-control"
+              -# %input.form-control{:placeholder => "Search for...", :type => "text"}/
+              %span.input-group-btn
+                = button_tag "Ir", :class => 'btn btn-outline-secondary',name: nil
+                -# %button.btn.btn-secondary{:type => "button"} Go!
+      / Categories Widget
+      .card.my-4
+        %h5.card-header.form-title Categories
+        .card-body
+          .row
+            .col-lg-6
+              %ul.list-unstyled.mb-0
+                %li
+                  %a{:href => "#"} Web Design
+                %li
+                  %a{:href => "#"} HTML
+                %li
+                  %a{:href => "#"} Freebies
+            .col-lg-6
+              %ul.list-unstyled.mb-0
+                %li
+                  %a{:href => "#"} JavaScript
+                %li
+                  %a{:href => "#"} CSS
+                %li
+                  %a{:href => "#"} Tutorials
+      / Side Widget
+      .card.my-4
+        %h5.card-header.form-title Side Widget
+        .card-body
+          You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+          %a(href="https://www.dropbox.com/sh/z6nphvps7ht1fik/AABD6JWA0MONAYiWGs1galLCa?dl=0") Fan Kit
+  / /.row
+/ /.container
+/ Footer
+-# %footer.py-5.bg-dark
+-#   .container
+-#     %p.m-0.text-center.text-white Copyright © Your Website 2019
+-#   / /.container

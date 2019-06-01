@@ -1,0 +1,15 @@
+.container
+  .row.justify-content-center
+    .col-12
+      %h2{class:'pt-5'}=@article.title
+      %h3=raw @article.description
+      %p{class:'text-right'}
+        Escrito por:
+        %span{class:"font-weight-bold font-italic"}
+          =@article.user.name
+          -# =link_to "#{@article.user.name}", profile_path(@user.profile.id)
+        en fecha:
+        %span{class:"font-weight-bold font-italic"}
+          =@article.created_at.strftime('%d-%m-%Y')
+  =link_to articles_path, class:'btn btn-outline-success mb-5' do
+    Regresar

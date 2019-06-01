@@ -1,0 +1,15 @@
+.container
+  .row.justify-content-center
+    .col-md-8
+      %h1.my-4.form-title.text-center
+        Index Profiles
+      - @profiles.each do |profile|
+        .card.mb-4
+          = image_tag (url_for(profile.avatar)), class: 'profile'
+          %p=profile.bio
+          %p=profile.birthday
+          %p=profile.country
+          %p=profile.clantag
+          %p=profile.clancoc
+          %p=profile.twitter
+          = link_to "show", profile_path(profile.id)

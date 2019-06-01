@@ -1,0 +1,14 @@
+.container
+  .row.justify-content-center
+    .col-12
+      = image_tag (url_for(@profile.avatar)), class: 'profile'
+      %h2{class:'pt-5'}=@profile.user.name
+      %p=@profile.bio
+      %p=@profile.birthday
+      %p=@profile.country
+      %p=@profile.clantag
+      %p=@profile.clancoc
+      %p=@profile.twitter
+
+  =link_to articles_path, class:'btn btn-outline-success mb-5' do
+    Regresar

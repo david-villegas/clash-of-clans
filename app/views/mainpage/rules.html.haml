@@ -1,0 +1,87 @@
+%header
+  .main-nav#navbar
+    .container
+      %nav.navbar.navbar-expand-lg.navbar-dark.data-scroll-header
+        %a.navbar-brand{href: root_path}
+          %h1
+            = image_tag "logo.png", class: ''
+        %button.navbar-toggler{"aria-controls": "navbarNavDropdown", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarNavDropdown", "data-toggle": "collapse", type: "button"}
+          %span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse
+          %ul.navbar-nav.navbar-right.ml-auto
+            %li.nav-item.active
+              %a.nav-link{"data-scroll": "", href: root_path}
+                Home
+                %span.sr-only (current)
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: "#top"} Top
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: "#convivencia"} Convivencia
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: "#eventos"} Eventos
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: "#sanciones"} Sanciones
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: articles_path} Blog
+  // #navbar
+
+.padding-home#top
+  .container
+    .heading.wow.fadeInUp{"data-wow-delay" => "300ms", "data-wow-duration" => "1000ms"}
+      .row.justify-content-center
+        .text-center.col-sm-8.col-sm-offset-2
+          = image_tag 'coc-logo.png', class: 'img-fluid'
+          %h2{class: 'form-title mt-5'} Reglas
+          %p "Jugar junto a otras personas implica tener respeto tanto hacia uno mismo como hacia los demás. Recuerda que detrás de cada norma existe una razón ética que puede hacerte ver de manera rápida porque es importante cumplir las reglas."
+#convivencia
+  .container
+    .heading.wow.fadeInUp{"data-wow-delay" => "300ms", "data-wow-duration" => "1000ms"}
+      .row.justify-content-center
+        .col-md-8
+          %h3.font-weight-bolder.form-title Convivencia:
+          %ul
+            %li Respeto para todos los miembros del clan.
+            %li Somos Clan Donador (indispensable que donen y pidan tropas).
+            %li Amamos las Guerras (obligatorio realizar los 2 ataques ó habrán sanciones).
+            %li Nuestras Guerras son grandes, no importa si no sabes atacar te enseñamos (solo importa que seas activo).
+            %li Utilizar la Bandera roja en caso de no querer ingresar por un momento específico a guerra.
+            %li Obligatoriamente debes estar en el grupo de Whatsapp.
+            %li Los ataques seran asignados por el Líder ó Colíderes (no se realizan ataques sin antes ser asignados).
+            %li Una vez asignado los ataques se deben realizar lo mas pronto posible (no esperar al final).
+            %li En Guerra solo se dona lo que se solicita y las tropas deben ser Max.
+            %li Ascensos dentro del clan serán otorgado a personas que por su actividad y liderazgo cumplan con los requisitos.
+            %li Nos reservamos el derecho de admisión.
+        .col-md-4
+          = image_tag 'tutor.png', class: 'img-fluid'
+
+#eventos
+  .container
+    .heading.wow.fadeInUp{"data-wow-delay" => "300ms", "data-wow-duration" => "1000ms"}
+      .row.justify-content-center
+        .col-md-3
+          = image_tag 'gems.png', class: 'img-fluid'
+        .col-md-9
+          %h3.font-weight-bolder.form-title Eventos:
+          %ul
+            %li La primera persona en culminar los 4 mil puntos en los juegos del clan recibirá como recompensa el Bono del CWL.
+            %li Las personas que hagan menos de 1.000 punto (por cuenta) en los juegos del clan seran sancionados.
+            %li Los miembros que van a la CWL (Clan War Leagues) serán seleccionados por: Nivel de Ayuntamiento y Experiencia en Guerra (Por el bienestar del clan, el Líder y los Colíderes estudiaran en conjunto quienes seran los escogidos).
+            %li Los ataques en este evento seran asignados por el Líder ó Colíderes.
+            %li El Bono será otorgado evaluando la dificultad de los espejos asignados y no por cantidad de estrellas.
+            %li Es de caracter Obligatorio realizar los 7 ataques para poder participar por la obtención del Bono.
+
+#sanciones
+  .container
+    .heading.wow.fadeInUp{"data-wow-delay" => "300ms", "data-wow-duration" => "1000ms"}
+      .row.justify-content-center
+        .col-md-8
+          %h3.font-weight-bolder.form-title Sanciones:
+          %ul
+            %li Las sanciones se toman en conjunto por el Líder y Colíderes del Clan, pueden traer como consecuencias:
+            %ol
+              %li Exclusión de guerras.
+              %li Expulsión del Clan.
+            %li Nos tomamos el juego muy enserio por tal razon buscamos personas comprometidas y responsables.
+            %li En caso de tener alguna dificultad para el cumplimiento de algunas de las normas ya mencionas en un momento espeficico notificarlo al Líder ó Colíderes para ser tomadas en cuenta (problemas con la electricidad, problemas con el internet, enfermedad, etc.)
+        .col-md-4
+          = image_tag 'sanciones.png', class: 'img-fluid'

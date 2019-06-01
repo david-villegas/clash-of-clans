@@ -1,0 +1,56 @@
+= form_with(model: @profile, local:true) do |f|
+  - if @profile.errors.any?
+    .row.justify-content-center
+      .col-6
+        #error_explanation.alert.alert-danger.alert-dismissible.fade.show
+          %h4
+            = pluralize(@profile.errors.count, "error")
+            al intentar registrar el Perfil:
+          %ul
+            - @profile.errors.full_messages.each do |message|
+              %li= message
+          %button.close{ 'data-dismiss': 'alert' }
+            %span x
+  = f.fields_for :user, @user do |u|
+    .form-group
+      .row.justify-content-center
+        .col-6
+          = u.label :name,'Nombre y Apellido', class: 'form-title'
+          = u.text_field :name, class: 'form-control', autofocus: true
+    .form-group
+      .row.justify-content-center
+        .col-6
+          = f.label :bio, 'Biografía', class: 'form-title'
+          = f.text_area :bio, class: 'form-control', autofocus: true, autocomplete: "bio", required: 'true', maxlength: '250'
+          %small Máximo 250 caracteres
+    .form-group
+      .row.justify-content-center
+        .col-3
+          = f.label :birthday, 'Fecha de Nacimiento', class: 'form-title'
+          = f.date_field :birthday, class: 'form-control', required: 'true'
+        .col-3
+          = f.label :country, 'País', class: 'form-title'
+          = f.text_field :country, class: 'form-control', required: 'true', maxlength: '25'
+    .form-group
+      .row.justify-content-center
+        .col-3
+          = f.label :clantag, 'Código de tu Clan', class: 'form-title'
+          = f.text_field :clantag, class: 'form-control', maxlength: '25', placeholder: 'Ejemplo: #PPV8CQQ2'
+        .col-3
+          = f.label :clancoc, 'Tú Nombre en el Clan', class: 'form-title'
+          = f.text_field :clancoc, class: 'form-control', maxlength: '25'
+    .form-group
+      .row.justify-content-center
+        .col-3
+          = f.label :twitter, 'Twitter', class: 'form-title'
+          = f.text_field :twitter, class: 'form-control', maxlength: '30'
+        .col-3
+          = f.label :avatar, 'Avatar', class: 'form-title'
+          = f.file_field :avatar, class: ''
+    .actions.text-center
+      .form-group
+        .row.justify-content-center
+          .col-3
+            = f.submit "Guardar", class: 'btn btn-outline-primary btn-block'
+          .col-3
+            = link_to "Cancelar", articles_path, class: 'btn btn-outline-danger btn-block'

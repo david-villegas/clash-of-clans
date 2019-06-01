@@ -1,0 +1,306 @@
+%header
+  .main-nav#navbar
+    .container
+      %nav.navbar.navbar-expand-lg.navbar-dark.data-scroll-header
+        %a.navbar-brand{href: root_path}
+          %h1
+            = image_tag "logo.png", class: ''
+        %button.navbar-toggler{"aria-controls": "navbarNavDropdown", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarNavDropdown", "data-toggle": "collapse", type: "button"}
+          %span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse
+          %ul.navbar-nav.navbar-right.ml-auto
+            %li.nav-item.active
+              %a.nav-link{"data-scroll": "", href: root_path}
+                Home
+                %span.sr-only (current)
+            -# %li.nav-item
+            -#   %a.nav-link{"data-scroll": "", href: "#convivencia"} Convivencia
+            -# %li.nav-item
+            -#   %a.nav-link{"data-scroll": "", href: "#eventos"} Eventos
+            -# %li.nav-item
+            -#   %a.nav-link{"data-scroll": "", href: "#sanciones"} Sanciones
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: articles_path} Blog
+  // #navbar
+
+.padding-home
+  .container
+    .heading.wow.fadeInUp{"data-wow-delay" => "300ms", "data-wow-duration" => "1000ms"}
+      .row.justify-content-center
+        .text-center.col-sm-8.col-sm-offset-2
+          %h2{class: 'form-title mt-5'} ¿Como Funciona?
+          %p Selecciona toda las tropas que utilizaras en tu ataque y verifica a partir de que punto se activa <b>El Aguila,</b> así sabras que tropas utilizar para derribarla sin recibir ningun daño de su parte.
+  %table.calculadora{"data-wow-delay" => "700ms", "data-wow-duration" => "1000ms"}
+    %tr
+      %td
+        %button#barbaro{class: 'btn btn-outline-secondary'}
+          = image_tag "barbaro.png"
+      %td
+        %button#gigante{class: 'btn btn-outline-secondary'}
+          = image_tag "gigante.png"
+      %td
+        %button#rompeMuros{class: 'btn btn-outline-secondary'}
+          = image_tag "rompeMuros.png"
+      %td
+        %button#mago{class: 'btn btn-outline-secondary'}
+          = image_tag "mago.png"
+      %td
+        %button#dragon{class: 'btn btn-outline-secondary'}
+          = image_tag "dragon.png"
+      %td
+        %button#babyDragon{class: 'btn btn-outline-secondary'}
+          = image_tag "babydragon.png"
+      %td
+        %button#dragonElectrico{class: 'btn btn-outline-secondary'}
+          = image_tag "dragonElectrico.png"
+      %td
+        %button#esbirro{class: 'btn btn-outline-secondary'}
+          = image_tag "esbirro.png"
+      %td
+        %button#valkiria{class: 'btn btn-outline-secondary'}
+          = image_tag "valkiria.png"
+      %td
+        %button#bruja{class: 'btn btn-outline-secondary'}
+          = image_tag "bruja.png"
+      %td
+        %button#lanzaRocas{class: 'btn btn-outline-secondary'}
+          = image_tag "lanzaRocas.png"
+    %tr
+      %td
+        %button#arquera{class: 'btn btn-outline-secondary'}
+          = image_tag "arquera.png"
+      %td
+        %button#duende{class: 'btn btn-outline-secondary'}
+          = image_tag "duende.png"
+      %td
+        %button#globo{class: 'btn btn-outline-secondary'}
+          = image_tag "globo.png"
+      %td
+        %button#sanadora{class: 'btn btn-outline-secondary'}
+          = image_tag "sanadora.png"
+      %td
+        %button#pekka{class: 'btn btn-outline-secondary'}
+          = image_tag "pekka.png"
+      %td
+        %button#minero{class: 'btn btn-outline-secondary'}
+          = image_tag "minero.png"
+      %td
+        %button#vacio{:style => "display: none;"} vacio
+      %td
+        %button#montaPuerco{class: 'btn btn-outline-secondary'}
+          = image_tag "montaPuerco.png"
+      %td
+        %button#golem{class: 'btn btn-outline-secondary'}
+          = image_tag "golem.png"
+      %td
+        %button#lavaPops{class: 'btn btn-outline-secondary'}
+          = image_tag "lavaPops.png"
+      %td
+        %button#golemHielo{class: 'btn btn-outline-secondary'}
+          = image_tag "golemHielo.png"
+    %tr
+      %td
+        %button#rayo{class: 'btn btn-outline-secondary'}
+          = image_tag "rayo.png"
+      %td
+        %button#furia{class: 'btn btn-outline-secondary'}
+          = image_tag "furia.png"
+      %td
+        %button#hielo{class: 'btn btn-outline-secondary'}
+          = image_tag "hielo.png"
+      %td
+        %button#veneno{class: 'btn btn-outline-secondary'}
+          = image_tag "veneno.png"
+      %td
+        %button#velocidad{class: 'btn btn-outline-secondary'}
+          = image_tag "velocidad.png"
+      %td
+        %button#murcielago{class: 'btn btn-outline-secondary'}
+          = image_tag "murcielago.png"
+      %td
+        %button#vacio2{:style => "display: none;"} vacio2
+      %td
+        %button#reyBarbaro{class: 'btn btn-outline-secondary'}
+          = image_tag "reyBarbaro.png"
+      %td
+        %button#reinaArquera{class: 'btn btn-outline-secondary'}
+          = image_tag "reinaArquera.png"
+      %td
+        %button#granCentinela{class: 'btn btn-outline-secondary'}
+          = image_tag "granCentinela.png"
+    %tr
+      %td
+        %button#curacion{class: 'btn btn-outline-secondary'}
+          = image_tag "curacion.png"
+      %td
+        %button#salto{class: 'btn btn-outline-secondary'}
+          = image_tag "salto.png"
+      %td
+        %button#clonacion{class: 'btn btn-outline-secondary'}
+          = image_tag "clonacion.png"
+      %td
+        %button#terremoto{class: 'btn btn-outline-secondary'}
+          = image_tag "terremoto.png"
+      %td
+        %button#esqueletos{class: 'btn btn-outline-secondary'}
+          = image_tag "esqueletos.png"
+    %tr
+      %td{:colspan => "10"}
+        %span#resultado.form-title
+      %td
+        = image_tag "aguilaDesactivada.png", id: 'status', class:'aguila'
+      %td
+        %button#limpiar{class: 'btn btn-outline-secondary'} Clear
+      %td
+        %label#status
+
+  %table.calculadora
+    %tr
+      %td
+        %button#obarbaro{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "barbaro.png"
+          %label#lblbarbaro{:for => "obarbaro"}
+      %td
+        %button#ogigante{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "gigante.png"
+          %label#lblgigante{:for => "ogigante"}
+      %td
+        %button#orompeMuros{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "rompeMuros.png"
+          %label#lblrompeMuros{:for => "orompeMuros"}
+      %td
+        %button#omago{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "mago.png"
+          %label#lblmago{:for => "omago"}
+      %td
+        %button#odragon{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "dragon.png"
+          %label#lbldragon{:for => "odragon"}
+      %td
+        %button#obabyDragon{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "babydragon.png"
+          %label#lblbabyDragon{:for => "obabyDragon"}
+      %td
+        %button#odragonElectrico{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "dragonElectrico.png"
+          %label#lbldragonElectrico{:for => "odragonElectrico"}
+      %td
+        %button#oesbirro{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "esbirro.png"
+          %label#lblesbirro{:for => "oesbirro"}
+      %td
+        %button#ovalkiria{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "valkiria.png"
+          %label#lblvalkiria{:for => "ovalkiria"}
+      %td
+        %button#obruja{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "bruja.png"
+          %label#lblbruja{:for => "obruja"}
+      %td
+        %button#olanzaRocas{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "lanzaRocas.png"
+          %label#lbllanzaRocas{:for => "olanzaRocas"}
+    %tr
+      %td
+        %button#oarquera{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "arquera.png"
+          %label#lblarquera{:for => "oarquera"}
+      %td
+        %button#oduende{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "duende.png"
+          %label#lblduende{:for => "oduende"}
+      %td
+        %button#oglobo{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "globo.png"
+          %label#lblglobo{:for => "oglobo"}
+      %td
+        %button#osanadora{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "sanadora.png"
+          %label#lblsanadora{:for => "osanadora"}
+      %td
+        %button#opekka{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "pekka.png"
+          %label#lblpekka{:for => "opekka"}
+      %td
+        %button#ominero{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "minero.png"
+          %label#lblminero{:for => "ominero"}
+      %td
+        %button#ovacio{:style => "display: none;"}
+          ovacio
+          %label#lblvacio{:for => "ovacio"}
+      %td
+        %button#omontaPuerco{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "montaPuerco.png"
+          %label#lblmontaPuerco{:for => "omontaPuerco"}
+      %td
+        %button#ogolem{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "golem.png"
+          %label#lblgolem{:for => "ogolem"}
+      %td
+        %button#olavaPops{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "lavaPops.png"
+          %label#lbllavaPops{:for => "olavaPops"}
+      %td
+        %button#ogolemHielo{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "golemHielo.png"
+          %label#lblgolemHielo{:for => "ogolemHielo"}
+    %tr
+      %td
+        %button#orayo{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "rayo.png"
+          %label#lblrayo{:for => "orayo"}
+      %td
+        %button#ofuria{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "furia.png"
+          %label#lblfuria{:for => "ofuria"}
+      %td
+        %button#ohielo{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "hielo.png"
+          %label#lblhielo{:for => "ohielo"}
+      %td
+        %button#oveneno{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "veneno.png"
+          %label#lblveneno{:for => "oveneno"}
+      %td
+        %button#ovelocidad{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "velocidad.png"
+          %label#lblvelocidad{:for => "ovelocidad"}
+      %td
+        %button#omurcielago{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "murcielago.png"
+          %label#lblmurcielago{:for => "omurcielago"}
+      %td
+        %button#ovacio2{:style => "display: none;"}
+          ovacio2
+          %label#lblvacio2{:for => "ovacio2"}
+      %td
+        %button#oreyBarbaro{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "reyBarbaro.png"
+      %td
+        %button#oreinaArquera{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "reinaArquera.png"
+      %td
+        %button#ogranCentinela{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "granCentinela.png"
+    %tr
+      %td
+        %button#ocuracion{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "curacion.png"
+          %label#lblcuracion{:for => "ocuracion"}
+      %td
+        %button#osalto{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "salto.png"
+          %label#lblsalto{:for => "osalto"}
+      %td
+        %button#oclonacion{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "clonacion.png"
+          %label#lblclonacion{:for => "oclonacion"}
+      %td
+        %button#oterremoto{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "terremoto.png"
+          %label#lblterremoto{:for => "oterremoto"}
+      %td
+        %button#oesqueletos{:style => "display: none;", class:'btn btn-outline-secondary'}
+          = image_tag "esqueletos.png"
+          %label#lblesqueletos{:for => "oesqueletos"}

@@ -1,0 +1,31 @@
+.container.pt-3
+  .row.justify-content-center
+    / Blog Entries Column
+    .col-md-6
+      / Blog Post
+      -if !@articles.present?
+        %h2.text-center.form-title.pt-3 No se encontraron resultados
+        .container
+          .row.justify-content-center
+            .col.text-center
+              = image_tag 'oops.jpg', height: '350px', width: '350px', class: 'img-fluid mb-3'
+      -else
+        %h2.text-center.form-title.pt-3= "Posts encontrados: #{@result}"
+        - @articles.each do |article|
+          .card.mb-4
+            -# %img.card-img-top{:alt => "Card image cap", :src => "http://placehold.it/750x300"}/
+            %h2.card-title.card-header=article.title
+            .card-body
+              %p.card-text=simple_format("#{article.description.first(350)} ...") #"raw" tambien sirve
+              %a.btn.btn-outline-primary.btn-sm{:href => article_path(article.id)} Seguir Leyendo →
+            .card-footer.text-muted.text-right
+              Posted on:
+              =article.created_at.strftime('%d-%m-%Y')
+              by
+              %span{class:"font-weight-bold font-italic"}
+                =article.user.name
+        / Pagination
+        .mt-3= will_paginate @articles
+  .row.justify-content-center
+    =link_to articles_path, class:'btn btn-outline-success mb-2 btn-sm' do
+      Regresar

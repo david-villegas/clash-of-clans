@@ -1,0 +1,54 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.fixed-top#bg-dark.form-bar
+  .container
+    -if @user.present?
+      %a.navbar-brand{:href => articles_path}= current_user.name
+      %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        %ul.navbar-nav.ml-auto.navbar-blog
+          %li.nav-item.active
+            %a.nav-link{:href => root_path}
+              Home
+              %span.sr-only (current)
+          %li.nav-item
+            = link_to articles_path, class:'nav-link' do
+              Posts
+          %li.nav-item
+            %a.nav-link{:href => my_posts_path} My Posts
+          %li.nav-item
+            %a.nav-link{:href => new_article_path} New Post
+          -if @user.profile.present?
+            %li.nav-item
+              = image_tag (url_for(@user.profile.avatar)), class: 'mt-3 profile'
+            %li.nav-item.dropdown
+              %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdown"}
+                %a#profile__link.dropdown-item.profile__link{:href => profile_path(@user.profile.id)} Show Profile
+                .dropdown-divider
+                %a#profile__link.dropdown-item.profile__link{:href => edit_profile_path(@user.profile.id)} Edit Profile
+                .dropdown-divider
+                = link_to destroy_user_session_path, method: 'delete', class:'dropdown-item', id:'profile__link' do
+                  Sign Out
+          -else
+            %li.nav-item
+              %a.nav-link{:href => new_profile_path} Create Profile
+            %li.nav-item
+              = link_to destroy_user_session_path, method: 'delete', class:'nav-link' do
+                Sign Out
+    -else
+      %a.navbar-brand{:href => root_path}
+        = image_tag "logo.png", class: ''
+      %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        %ul.navbar-nav.ml-auto.navbar-blog
+          %li.nav-item.active
+            %a.nav-link{:href => articles_path}
+              Posts
+              %span.sr-only (current)
+          %li.nav-item
+            = link_to new_user_registration_path, class:'nav-link' do
+              Sign Up
+          %li.nav-item
+            = link_to new_user_session_path, class:'nav-link' do
+              Sign In

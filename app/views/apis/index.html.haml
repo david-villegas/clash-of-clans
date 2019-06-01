@@ -1,0 +1,130 @@
+%header
+  .main-nav#navbar
+    .container
+      %nav.navbar.navbar-expand-lg.navbar-dark.data-scroll-header
+        %a.navbar-brand{href: root_path}
+          %h1
+            = image_tag "logo.png", class: ''
+        %button.navbar-toggler{"aria-controls": "navbarNavDropdown", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarNavDropdown", "data-toggle": "collapse", type: "button"}
+          %span.navbar-toggler-icon
+        #navbarNavDropdown.collapse.navbar-collapse
+          %ul.navbar-nav.navbar-right.ml-auto
+            %li.nav-item.active
+              %a.nav-link{"data-scroll": "", href: root_path}
+                Home
+                %span.sr-only (current)
+            -# %li.nav-item
+            -#   %a.nav-link{"data-scroll": "", href: "#convivencia"} Convivencia
+            -# %li.nav-item
+            -#   %a.nav-link{"data-scroll": "", href: "#eventos"} Eventos
+            -# %li.nav-item
+            -#   %a.nav-link{"data-scroll": "", href: "#sanciones"} Sanciones
+            %li.nav-item
+              %a.nav-link{"data-scroll": "", href: articles_path} Blog
+
+.container.padding-home
+  .row.justify-content-center.mt-5
+    .col
+      .text-center= image_tag "#{@data['badgeUrls']['medium']}", alt: '', height: '', width: '', class: ''
+  .row.justify-content-center
+    .col
+      %h1{class: 'text-center'}=@data['name']
+  .row.justify-content-center
+    .col
+      %h5{class: 'text-center'}=@data['description']
+  .row.justify-content-center
+    .col
+      %h5{class: 'text-center'} Código del Clan
+      .text-center=@data['tag']
+  .row.justify-content-center
+    .col-6
+      .card
+        .card-body
+          .row
+            .col-6.text-right
+              = image_tag 'Venezuela.png', alt: '', height: '', width: '30rem', class: ''
+            .col-6
+              %h5{class: 'text-left'}=@data['location']['name']
+  .row
+    .col-12
+      .row.justify-content-center
+        .col-3
+          .card
+            .card-body
+              .row
+                .col-6
+                  .text-right= image_tag 'trophy.png', alt: '', height: '', width: '50rem', class: ''
+                .col-6
+                  = @data['clanPoints']
+                  %br/
+                  Puntos
+        .col-3
+          .card
+            .card-body
+              .row
+                .col-3
+                  = image_tag 'wars.png', alt: '', height: '', width: '50rem', class: ''
+                .col-9
+                  = @data['warWins']
+                  %br/
+                  Guerras Ganadas
+  .row
+    .col-12
+      .row.justify-content-center
+        .col-3.text-center
+          Miembros:
+          %span
+            =@data['members']
+          %br
+          Frecuencia de Guerra:
+          %span
+            =@data['warFrequency']
+        .col-3.text-center
+          Tipo:
+          %span
+            =@data['type']
+          %br
+          Trofeos Requeridos:
+          %span
+            =@data['requiredTrophies']
+  %h2.mt-3.mb-3.text-center Miembros del Clan
+  %table{class: 'table table-hover', id: 'tableleaders'}
+    %thead
+      %tr
+        %th
+          Escudo
+        %th
+          Código
+        %th
+          Nombre
+        %th
+          Role
+        %th
+          Nivel de Experiencia
+        %th
+          Trofeos
+        %th
+          Posición
+    %tbody
+      -@data['memberList'].each_with_index do |k,v|
+        -# -puts k
+        %tr
+          %td
+            = image_tag "#{@data['memberList'][v]['league']['iconUrls']['tiny']}", alt: '', height: '', width: '', class: ''
+          %td
+            =@data['memberList'][v]['tag']
+          %td
+            =@data['memberList'][v]['name']
+          %td
+            =@data['memberList'][v]['role']
+          %td
+            =@data['memberList'][v]['expLevel']
+          %td
+            =@data['memberList'][v]['trophies']
+          %td
+            =@data['memberList'][v]['clanRank']
+  .row.justify-content-center.mt-5
+    .col-6
+      .text-center= link_to 'Inicio', root_path, class: 'btn btn-primary'
+    .col-6
+      .text-center= link_to 'Salir', destroy_user_session_path, method: :delete, class: 'btn btn-primary'

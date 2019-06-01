@@ -1,0 +1,31 @@
+= form_with(model: @article, local:true) do |f|
+  - if @article.errors.any?
+    .row.justify-content-center
+      .col-6
+        #error_explanation.alert.alert-danger.alert-dismissible.fade.show
+          %h4
+            = pluralize(@article.errors.count, "error")
+            al intentar registrar el Post:
+          %ul
+            - @article.errors.full_messages.each do |message|
+              %li= message
+          %button.close{ 'data-dismiss': 'alert' }
+            %span x
+  .form-group
+    .row.justify-content-center
+      .col-6
+        = f.label :title, 'Título', class: 'form-title'
+        = f.text_field :title, class: 'form-control', autofocus: true, autocomplete: "title"
+  .form-group
+    .row.justify-content-center
+      .col-6
+        = f.label :description, 'Contenido', class: 'form-title'
+        = f.hidden_field :description, class: 'form-control', id: 'wys', required: 'true'
+        %trix-editor.trix-editor{input:'wys'}
+  .actions.text-center
+    .form-group
+      .row.justify-content-center
+        .col-3
+          = f.submit "Guardar", class: 'btn btn-outline-primary btn-block'
+        .col-3
+          = link_to "Cancelar", articles_path, class: 'btn btn-outline-danger btn-block'

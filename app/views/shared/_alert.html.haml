@@ -1,0 +1,15 @@
+-if devise_error_messages!.present?
+  .row.justify-content-center
+    .col-6
+      .alert.alert-danger.alert-dismissible.fade.show
+        = devise_error_messages!
+        %button.close{ 'data-dismiss': 'alert' }
+          %span x
+-else
+  .row.justify-content-center
+    .col-6
+      #error_explanation
+        .alert.alert-danger.alert-dismissible.fade.show
+          %h5.text-center= "¡ #{flash.alert} !"
+          %button.close{ 'data-dismiss': 'alert' }
+            %span x
