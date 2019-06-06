@@ -1,14 +1,46 @@
 .container
   .row.justify-content-center
-    .col-12
-      = image_tag (url_for(@profile.avatar)), class: 'profile'
-      %h2{class:'pt-5'}=@profile.user.name
-      %p=@profile.bio
-      %p=@profile.birthday
-      %p=@profile.country
-      %p=@profile.clantag
-      %p=@profile.clancoc
-      %p=@profile.twitter
+    .col-md-6.mt-3
+      .card.shadow
+        .card-image-top
+          .text-center= image_tag (url_for(@profile.avatar)), class: 'profile-show mt-3'
+        .card-body
+          %h2{class:'pt-2 text-center'}=@profile.user.name
+          %b.font-italic
+            Biografía:
+            %span
+          =@profile.bio
+          %br/
+          .mt-3
+          %b.font-italic
+            Fecha de Nacimiento:
+            %span
+          =@profile.birthday
+          %br/
+          .mt-3
+          %b.font-italic
+            País de Residencia:
+            %span
+          =@profile.country
+          %br/
+          .mt-3
+          %b.font-italic
+            ID De tu Clan:
+            %span
+          =@profile.clantag
+          %br/
+          .mt-3
+          %b.font-italic
+            Tu nombre en el juego:
+            %span
+          =@profile.clancoc
+          %br/
+          .mt-3
+          %b.font-italic
+            Twitter:
+            %span
+          = link_to @profile.twitter, "https://twitter.com/#{@profile.twitter}", target: '_blank'
 
-  =link_to articles_path, class:'btn btn-outline-success mb-5' do
-    Regresar
+  .row.justify-content-center.mt-3
+    =link_to articles_path, class:'btn btn-sm btn-outline-success mb-5' do
+      Regresar

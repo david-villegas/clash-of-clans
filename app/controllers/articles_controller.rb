@@ -23,11 +23,11 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    @comments = @article.comments.paginate(page: params[:page], per_page: 5).order('created_at desc')
   end
 
   def myposts
-    @articles = Article.where(user_id: @user).paginate(page: params[:page], per_page: 5)
+    @articles = Article.where(user_id: @user).paginate(page: params[:page], per_page: 5).order('created_at desc')
   end
 
   def edit
@@ -77,7 +77,7 @@ class ArticlesController < ApplicationController
   def check_current_user
     if current_user.present?
       if @article.user_id != @user.id
-        redirect_back fallback_location: articles_path, alert: "Estas intentando acceder a una cuenta que no te pertenece"
+        redirect_back fallback_location: articles_path, alert: "Estas intentando acceder a un post que no has publicado"
         end
     else
       redirect_back fallback_location: articles_path, alert: "Tu Sesión ha expirado"

@@ -20,6 +20,8 @@ es:
       profile:
         birthday: "Fecha de Nacimiento"
         bio: "Biografía"
+      comment:
+        comment: "Comentario"
   date:
     abbr_day_names:
     - dom

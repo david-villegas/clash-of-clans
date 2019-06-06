@@ -24,54 +24,55 @@
 
 .container.padding-home
   .row.justify-content-center.mt-5
-    .col
+    .col-md
       .text-center= image_tag "#{@data['badgeUrls']['medium']}", alt: '', height: '', width: '', class: ''
   .row.justify-content-center
-    .col
-      %h1{class: 'text-center'}=@data['name']
+    .col-md
+      %h1{class: 'text-center form-title'}=@data['name']
   .row.justify-content-center
-    .col
-      %h5{class: 'text-center'}=@data['description']
+    .col-md-6
+      %h5{class: 'text-center mt-2'}=@data['description']
+      %hr/
   .row.justify-content-center
-    .col
-      %h5{class: 'text-center'} Código del Clan
-      .text-center=@data['tag']
+    .col-md
+      %h4{class: 'text-center mt-2'} Código del Clan
+      %h4.text-center.font-weight-bold=@data['tag']
   .row.justify-content-center
-    .col-6
+    .col-md-6
       .card
         .card-body
           .row
-            .col-6.text-right
+            .col-md-6.text-center
               = image_tag 'Venezuela.png', alt: '', height: '', width: '30rem', class: ''
-            .col-6
-              %h5{class: 'text-left'}=@data['location']['name']
+            .col-md-6.text-center
+              %h5{class: ''}=@data['location']['name']
   .row
-    .col-12
+    .col-md-12
       .row.justify-content-center
-        .col-3
+        .col-md-3
           .card
             .card-body
               .row
-                .col-6
-                  .text-right= image_tag 'trophy.png', alt: '', height: '', width: '50rem', class: ''
-                .col-6
+                .col-md-6
+                  .text-center= image_tag 'trophy.png', alt: '', height: '', width: '50rem', class: ''
+                .col-md-6.text-center
                   = @data['clanPoints']
                   %br/
                   Puntos
-        .col-3
+        .col-md-3
           .card
             .card-body
               .row
-                .col-3
+                .col-md-3.text-center
                   = image_tag 'wars.png', alt: '', height: '', width: '50rem', class: ''
-                .col-9
+                .col-md-9.text-center
                   = @data['warWins']
                   %br/
                   Guerras Ganadas
   .row
-    .col-12
+    .col-md-12
       .row.justify-content-center
-        .col-3.text-center
+        .col-md-3.text-center
           Miembros:
           %span
             =@data['members']
@@ -79,7 +80,7 @@
           Frecuencia de Guerra:
           %span
             =@data['warFrequency']
-        .col-3.text-center
+        .col-md-3.text-center
           Tipo:
           %span
             =@data['type']
@@ -87,44 +88,44 @@
           Trofeos Requeridos:
           %span
             =@data['requiredTrophies']
-  %h2.mt-3.mb-3.text-center Miembros del Clan
-  %table{class: 'table table-hover', id: 'tableleaders'}
-    %thead
-      %tr
-        %th
-          Escudo
-        %th
-          Código
-        %th
-          Nombre
-        %th
-          Role
-        %th
-          Nivel de Experiencia
-        %th
-          Trofeos
-        %th
-          Posición
-    %tbody
-      -@data['memberList'].each_with_index do |k,v|
-        -# -puts k
+  %h2.mt-3.mb-3.text-center.form-title Miembros del Clan
+  .table-responsive-sm
+    %table{class: 'table table-hover', id: 'tableleaders'}
+      %thead
         %tr
-          %td
-            = image_tag "#{@data['memberList'][v]['league']['iconUrls']['tiny']}", alt: '', height: '', width: '', class: ''
-          %td
-            =@data['memberList'][v]['tag']
-          %td
-            =@data['memberList'][v]['name']
-          %td
-            =@data['memberList'][v]['role']
-          %td
-            =@data['memberList'][v]['expLevel']
-          %td
-            =@data['memberList'][v]['trophies']
-          %td
-            =@data['memberList'][v]['clanRank']
-  .row.justify-content-center.mt-5
-    .col-6
-      .text-center= link_to 'Inicio', root_path, class: 'btn btn-primary'
-    .col-6
-      .text-center= link_to 'Salir', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+          %th
+            Escudo
+          %th
+            Código
+          %th
+            Nombre
+          %th
+            Role
+          %th
+            Nivel de Experiencia
+          %th
+            Trofeos
+          %th
+            Posición
+      %tbody
+        -@data['memberList'].each_with_index do |k,v|
+          -# -puts k
+          %tr
+            %td
+              = image_tag "#{@data['memberList'][v]['league']['iconUrls']['tiny']}", alt: '', height: '', width: '', class: ''
+            %td
+              =@data['memberList'][v]['tag']
+            %td
+              =@data['memberList'][v]['name']
+            %td
+              =@data['memberList'][v]['role']
+            %td
+              =@data['memberList'][v]['expLevel']
+            %td
+              =@data['memberList'][v]['trophies']
+            %td
+              =@data['memberList'][v]['clanRank']
+  .container
+    .row.justify-content-center.mt-2
+      .col-md-6
+        .text-center= link_to 'Regresar', root_path, class: 'btn btn-sm btn-outline-success mb-5'

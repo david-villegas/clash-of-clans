@@ -1,0 +1,38 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea.form-control {
+  min-height: 110px !important;
+}
+
+.signature{
+  background-color:  #d8d6d5 ;
+  border-radius: 10px;
+  border-style: groove;
+  text-align: center;
+}
+
+.comment-date{
+  font-size: 12px;
+}
+
+.comment-box{
+  border-style: groove;
+  border-radius: 25px;
+}
+
+.post-font{
+  font-family: clashofclans;
+}
+.post-font-title{
+  font-size: 30px !important;
+}
+
+.post-font-comment{
+  font-size: 25px !important;
+}
+
+.form-post-font{
+  color: black !important;
+}

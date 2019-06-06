@@ -1,7 +1,7 @@
 .container.pt-3
   .row.justify-content-center
     / Blog Entries Column
-    .col-md-6
+    .col-md-8
       / Blog Post
       -if !@articles.present?
         %h2.text-center.form-title.pt-3 No se encontraron resultados
@@ -27,5 +27,5 @@
         / Pagination
         .mt-3= will_paginate @articles
   .row.justify-content-center
-    =link_to articles_path, class:'btn btn-outline-success mb-2 btn-sm' do
+    =link_to articles_path, class:'btn btn-outline-success mb-3 btn-sm' do
       Regresar

@@ -1,15 +1,63 @@
 .container
   .row.justify-content-center
-    .col-12
-      %h2{class:'pt-5'}=@article.title
+    .col-md-12
+      %h2{class:'post-font post-font-title fix_top'}=@article.title
       %h3=raw @article.description
-      %p{class:'text-right'}
+  .row.justify-content-end
+    .col-md-5.signature
+      %span{class:'text-center'}
         Escrito por:
         %span{class:"font-weight-bold font-italic"}
-          =@article.user.name
-          -# =link_to "#{@article.user.name}", profile_path(@user.profile.id)
+          - if @article.user.profile.present?
+            =link_to "#{@article.user.name}", profile_path(@article.user.profile.id), target: "_blank"
+          -else
+            =@article.user.name
         en fecha:
         %span{class:"font-weight-bold font-italic"}
           =@article.created_at.strftime('%d-%m-%Y')
-  =link_to articles_path, class:'btn btn-outline-success mb-5' do
+  =link_to articles_path, class:'btn btn-sm btn-outline-success mt-3' do
     Regresar
+  .row.justify-content-start
+    .col-12
+      %hr
+  .row.justify-content-center
+    .col-md-8
+      %h2{class:'pt-3 post-font post-font-comment'}Comentarios
+      - if @comments.present?
+        - @comments.each do |comment|
+          .container.comment-box.mt-2
+            .row
+              - if comment.user.profile.present?
+                .col-md-2.pt-2
+                  = image_tag (url_for(comment.user.profile.avatar)), class: 'profile'
+              -else
+                .col-md-2.pt-2
+                  = image_tag ('default_avatar.png'), class: 'profile'
+              .col-md-10
+                %span{class: 'font-weight-bold'}=comment.user.name
+                %h6{class:'comment-date font-italic'}=comment.created_at.strftime('%b %d, %Y at %H:%M')
+                %p=comment.body
+        -# .mt-3= will_paginate @comments
+      - else
+        %h5{class: 'font-italic'} No hay comentarios publicados
+  .row.justify-content-center
+    .col-md-8.mt-3
+      - if @user.present?
+        -# = render 'comment_form'
+        %button.btn.btn-sm.btn-outline-info{"data-target" => "#comment", "data-toggle" => "modal", :type => "button"}
+          Comentar
+  .mt-3= will_paginate @comments
+  %br/
+  #comment.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        = render 'comment_form'
+        -# .modal-header
+        -#   %h5#exampleModalLabel.modal-title Modal title
+        -#   %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+        -#     %span{"aria-hidden" => "true"} ×
+        -# .modal-body
+        -#   \...
+        -# .modal-footer
+        -#   %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
+        -#   %button.btn.btn-primary{:type => "button"} Save changes

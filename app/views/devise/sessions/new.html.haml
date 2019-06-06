@@ -4,29 +4,29 @@
     = render 'shared/alert' if flash.alert
     .form-group
       .row.justify-content-center
-        .col-6
+        .col-md-6
           = f.label :email, 'Correo electrónico', class:'form-font'
           = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
     .form-group
       .row.justify-content-center
-        .col-6
+        .col-md-6
           = f.label :password, 'Contraseña', class:'form-font'
           = f.password_field :password, autocomplete: "current-password", class: 'form-control'
     - if devise_mapping.rememberable?
       .form-group
         .row.justify-content-center
-          .col-3
+          .col-md-3
             = f.check_box :remember_me
             = f.label :remember_me, 'Recordar usuario', class:'form-font'
-          .col-3.text-right.form-font
+          .col-md-3.text-right.form-font
             = link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name), id: 'forgot-password'
     .actions.text-center
       .form-group
         .row.justify-content-center
-          .col-3
+          .col-md-3.col-xs-3
             = f.submit "Ingresar", class: 'btn btn-primary btn-block'
         .row.justify-content-center
-          .col-3.register.font-weight-bold
+          .col-md-3.register.font-weight-bold
             ¿No estás registrado?
             = link_to "Registrarse", new_user_registration_path
   %a{href: articles_path}=image_tag 'favicon.ico', class:'btn_home'

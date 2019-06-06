@@ -1,7 +1,9 @@
 .container
   .row.justify-content-center
     .col-md-8
-      %h1.my-4.form-title.text-center Listado de mis Posts
+      %h2.my-4.form-title.text-center Mis Posts
+      =link_to articles_path, class:'btn btn-outline-success btn-sm' do
+        Regresar
       - @articles.each do |article|
         .card.mt-2
           %h3{class:'card-header text-center form-title'}=article.title
@@ -13,7 +15,4 @@
               %span
               =link_to article_path(article.id), method: 'delete', data: {confirm: '¿Esta seguro de eliminar el usuario seleccionado?'}, class:'btn btn-outline-danger btn-sm' do
                 Eliminar
-              %span
-              =link_to articles_path, class:'btn btn-outline-success btn-sm' do
-                Regresar
       .mt-3= will_paginate @articles

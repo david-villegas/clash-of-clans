@@ -1,0 +1,13 @@
+.container
+  = form_with(model: [@article,@article.comments.build], local:true) do |f|
+    .form-group
+      .row.justify-content-end
+        .col-md-12.mt-2
+          = f.label :body, 'Añadir Comentario', class: 'post-font form-post-font '
+          = f.text_area :body, class: 'form-control'
+    .actions.text-right
+      .form-group
+        .row.justify-content-center
+          .col-md-12
+            = f.submit "Guardar", class: 'btn btn-outline-primary btn-sm'
+            %button.btn.btn-sm.btn-outline-danger{"data-dismiss" => "modal", :type => "button"} Cancelar

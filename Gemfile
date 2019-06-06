@@ -38,9 +38,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'annotate'
 gem 'haml-rails'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'devise'
+gem 'devise', ">= 4.6.0"
 gem 'dropify-rails', '~> 0.1.0'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'jquery-validation-rails'

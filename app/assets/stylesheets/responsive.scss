@@ -1,11 +1,15 @@
 /* lg */
 @media (min-width: 1200px) {
-
+	.fix_top{
+		padding-top: 20px;
+	}
 }
 
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
-
+	.fix_top{
+		padding-top: 20px;
+	}
 }
 
 /* sm */
@@ -33,6 +37,9 @@
 	}
 	.btn-signup {
 		padding: 10px 20px;
+	}
+	.fix_top{
+		padding-top: 20px;
 	}
 }
 
@@ -223,6 +230,12 @@
 		text-align: center;
 	}
 	.footer-bottom p.pull-right {
+		float: none !important;
+	}
+	.footer-blog{
+		text-align: center;
+	}
+	.footer-blog p.pull-right {
 		float: none !important;
 	}
 }
