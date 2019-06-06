@@ -10,14 +10,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   after_initialize :set_default_role, if: :new_record?
-  after_create :registration_mail
+  # after_create :registration_mail
 
   def set_default_role
     self.role ||= :regular
   end
 
   # Este médoto, permite el envío de correo para aquellos usuarios que se registren por primera vez
-  def registration_mail
-    UserMailer.notify(self).deliver
-  end
+  # def registration_mail
+  #   UserMailer.notify(self).deliver
+  # end
 end
