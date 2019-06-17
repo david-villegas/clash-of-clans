@@ -18,7 +18,7 @@
           %li.nav-item
             %a.nav-link{:href => new_article_path} New Post
           -if @user.profile.present?
-            %li.nav-item
+            %li.nav-item#picturehover
               = image_tag (url_for(@user.profile.avatar)), class: 'mt-3 profile'
             %li.nav-item.dropdown
               %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
