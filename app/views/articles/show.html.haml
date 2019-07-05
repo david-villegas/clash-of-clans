@@ -25,7 +25,7 @@
       %h2{class:'pt-3 post-font post-font-comment'}Comentarios
       - if @comments.present?
         - @comments.each do |comment|
-          .container.comment-box.mt-2
+          .container.comment-box.mt-2.shadow
             .row
               - if comment.user.profile.present?
                 .col-md-2.pt-2
