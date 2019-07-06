@@ -10,6 +10,14 @@ body{
   padding-top: 85px;
 }
 
+.background-blog{
+  background-image: image-url('profileback.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .pagination {
   justify-content: center;
 }
@@ -25,6 +33,10 @@ body{
 .navbar-blog li a {
   color: #fff !important;
   font-size: 14px;
+}
+
+#blog_title {
+  color: #332e2e;
 }
 
 .empty-state{
@@ -44,4 +56,12 @@ body{
 
 #picturehover:hover{
   background-color: transparent !important;
+}
+
+.trix-editor{
+  background-color: #fff;
+}
+
+trix-toolbar .trix-button:not(:disabled) {
+  background-color: #fff;
 }

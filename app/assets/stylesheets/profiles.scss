@@ -9,9 +9,9 @@
 }
 
 .profile-show{
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  border-radius: 15%;
+  width: 100px;
+  height: 100px;
 }
 
 #profile__link{
@@ -21,3 +21,25 @@
   color: #666 !important;
   text-align: center;
 }
+
+.card-back{
+  background: linear-gradient(#f37335, #fdc830) !important;
+}
+
+.card-profile{
+  display: block;
+  margin: auto;
+  opacity: 0.5;
+}
+
+.top_card {
+  padding-top: 85px;
+}
+
+// .profile_background{
+//   background-image: image-url('profileback.png');
+//   background-position: center;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+// }

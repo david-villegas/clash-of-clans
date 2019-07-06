@@ -47,10 +47,9 @@
         .col-md-3
           = f.label :avatar, 'Avatar', class: 'form-title'
           = f.file_field :avatar, class: ''
-    .actions.text-center
+    .actions.text-right
       .form-group
         .row.justify-content-center
-          .col-md-3
-            = f.submit "Guardar", class: 'btn btn-outline-primary btn-block'
-          .col-md-3
-            = link_to "Cancelar", articles_path, class: 'btn btn-outline-danger btn-block'
+          .col-md-6
+            = f.submit "Guardar", class: 'btn btn-outline-primary btn-sm'
+            = link_to "Cancelar", profile_path(@user.profile.id), class: 'btn btn-outline-danger btn-sm'

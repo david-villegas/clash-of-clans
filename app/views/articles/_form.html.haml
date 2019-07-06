@@ -22,10 +22,9 @@
         = f.label :description, 'Contenido', class: 'form-title'
         = f.hidden_field :description, class: 'form-control', id: 'wys', required: 'true'
         %trix-editor.trix-editor{input:'wys'}
-  .actions.text-center
+  .actions.text-right
     .form-group
       .row.justify-content-center
-        .col-md-3
-          = f.submit "Guardar", class: 'btn btn-outline-primary btn-block'
-        .col-md-3
-          = link_to "Cancelar", articles_path, class: 'btn btn-outline-danger btn-block'
+        .col-md-6
+          = f.submit "Guardar", class: 'btn btn-outline-primary btn-sm'
+          = link_to "Cancelar", my_posts_path, class: 'btn btn-outline-danger btn-sm'
