@@ -1,5 +1,5 @@
 class ApisController < ApplicationController
-  layout 'main'
+  layout 'api'
 
   def index
     @id = "PPV8CQQ2"

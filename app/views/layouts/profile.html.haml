@@ -9,7 +9,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag asset_path('favicon.ico')
-  %body.top_card.background-blog
+  %body.top_card.profile_background
     = render 'shared/navbar_blog'
     #notice= render 'shared/alertsuccess' if (flash[:notice])
     #error= render 'shared/alerterror' if (flash[:alert]) if (controller_name != 'sessions')
