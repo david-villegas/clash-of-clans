@@ -18,7 +18,9 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to my_posts_path, notice: "¡ Post creado exitosamente !"
     else
-      render :action => 'new'
+      respond_to do |format|
+        format.html { render "new" }
+      end
     end
   end
 
@@ -38,7 +40,10 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to my_posts_path, notice: "¡ Se ha actualizado el Post satisfactoriamente !"
     else
-      render :action => 'edit'
+      respond_to do |format|
+        format.html { render "edit", alert: 'No fue posible actualizar el Post, ¡intente nuevamente!' }
+        # render :edit, alert: 'No fue posible actualizar el Post, ¡intente nuevamente!'
+      end
     end
   end
 

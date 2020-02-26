@@ -78,4 +78,8 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # There is a possible a possible remote code executing exploit in Rails when in development mode. This vulnerability has been assigned the CVE identifier CVE-2019-5420.
+  # This issue can be mitigated by specifying a secret key in development mode
+  config.secret_key_base = SecureRandom.hex(64)
 end

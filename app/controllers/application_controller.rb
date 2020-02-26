@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
   before_action :configure_sign_up_params, if: :devise_controller?
   rescue_from RestClient::Forbidden, with: :handle_forbidden
   rescue_from ActiveRecord::RecordNotFound, with: :handle_exception

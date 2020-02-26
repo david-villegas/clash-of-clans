@@ -23,7 +23,9 @@ class ProfilesController < ApplicationController
         redirect_to profile_path(@user.profile.id), notice: '¡ Perfil Creado Correctamente !'
       end
     else
-      render :action => 'new'
+      respond_to do |format|
+        format.html { render "new" }
+      end
     end
   end
 
@@ -39,7 +41,10 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to profile_path, notice: '¡ Perfil actualizado correctamente !'
     else
-      render :edit, alert: 'Tú Perfil no se pudo actualizar, ¡intente nuevamente!'
+      respond_to do |format|
+        format.html { render "edit", alert: 'Tú Perfil no se pudo actualizar, ¡intente nuevamente!' }
+      end
+      # render :edit, alert: 'Tú Perfil no se pudo actualizar, ¡intente nuevamente!'
     end
   end
 
