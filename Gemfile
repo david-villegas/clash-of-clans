@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'annotate'
 gem 'haml-rails'
-gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise', ">= 4.7.1"
 gem 'dropify-rails', '~> 0.1.0'
