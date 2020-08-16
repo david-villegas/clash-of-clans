@@ -7,7 +7,7 @@
       #navbarResponsive.collapse.navbar-collapse
         %ul.navbar-nav.ml-auto.navbar-blog
           %li.nav-item.active
-            %a.nav-link{:href => root_path}
+            %a.nav-link{:href => 'https://supremacy-coc.netlify.app/home.html'}
               Home
               %span.sr-only (current)
           %li.nav-item
@@ -36,7 +36,7 @@
               = link_to destroy_user_session_path, method: 'delete', class:'nav-link' do
                 Sign Out
     -else
-      %a.navbar-brand{:href => root_path}
+      %a.navbar-brand{:href => 'https://supremacy-coc.netlify.app/home.html'}
         = image_tag "logo.png", class: ''
       %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
